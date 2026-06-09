@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17
+
+    container_name: prepforge-postgres
+
+    environment:
+      POSTGRES_USER: prepforge
+      POSTGRES_PASSWORD: prepforge
+      POSTGRES_DB: prepforge
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
