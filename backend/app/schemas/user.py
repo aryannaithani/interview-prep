@@ -6,7 +6,6 @@ class UserCreate(BaseModel):
     username: str
     password: str
 
-
 class UserResponse(BaseModel):
     id: str
     email: str
@@ -15,3 +14,7 @@ class UserResponse(BaseModel):
     model_config = {
         "from_attributes": True
     }
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
